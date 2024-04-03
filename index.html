@@ -46,13 +46,14 @@
         if (!zoomedOut) {
           // 2000 = ms à attendre avant de faire le dézoom.
           let dezoom_time = 2000;
-          let centerpan_time = dezoom_time+300;
+          let centerpan_time = dezoom_time+275;
           setTimeout(function() {
             map.setZoom(6.3);
             zoomedOut = true; // Pour s'assurer
+            
           }, dezoom_time);
           setTimeout(function() {
-          map.setCenter({ lat: 48.4095366, lng: -66.7975715 })
+            map.panTo({ lat: 48.4095366, lng: -66.7975715 })
         },centerpan_time)
         }
       }
